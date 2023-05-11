@@ -24,10 +24,10 @@ namespace AspNetCoreDemo.Models.Repostries
         public Author Find(int Id){
             return authors.SingleOrDefault(b => b.Id == id);
         }
-        public void Add(TEntity entity){
+        public void Add(Author entity){
             authors.Add(entity);
         }
-        public void Update(int id ,TEntity entity){
+        public void Update(int id ,Author entity){
            var author =  Find(id) ;
            author.FullName = entity.FullName;
         }

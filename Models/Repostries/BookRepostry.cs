@@ -24,10 +24,10 @@ namespace AspNetCoreDemo.Models.Repostries
         public Book Find(int Id){
             return books.SingleOrDefault(b => b.Id == id);
         }
-        public void Add(TEntity entity){
+        public void Add(Book entity){
             books.Add(entity);
         }
-        public void Update(int id ,TEntity entity){
+        public void Update(int id ,Book entity){
            var book =  Find(id);
            book.Title = entity.Title;
            book.Descreption = entity.Descreption;
