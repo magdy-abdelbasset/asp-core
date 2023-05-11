@@ -7,7 +7,7 @@ namespace AspNetCoreDemo.Models.Repostries
 {
     public class BookRepostry :IBookStoreRepostry<Book>
     {
-        List<Book> list;
+        List<Book> books;
         public BookRepostry(){
             books = new List<Book>(){
                 new Book {
