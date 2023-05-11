@@ -22,7 +22,7 @@ namespace AspNetCoreDemo.Models.Repostries
             return authors;
         }
         public Author Find(int Id){
-            return authors.SingleOrDefault(b => b.Id == id);
+            return authors.SingleOrDefault(b => b.Id == Id);
         }
         public void Add(Author entity){
             authors.Add(entity);
@@ -32,7 +32,7 @@ namespace AspNetCoreDemo.Models.Repostries
            author.FullName = entity.FullName;
         }
         public void Delete(int Id){
-           authors.Remove(Find(id));
+           authors.Remove(Find(Id));
         }
     }
 }
