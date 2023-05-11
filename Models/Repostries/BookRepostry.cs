@@ -22,7 +22,7 @@ namespace AspNetCoreDemo.Models.Repostries
             return books;
         }
         public Book Find(int Id){
-            return books.SingleOrDefault(b => b.Id == id);
+            return books.SingleOrDefault(b => b.Id == Id);
         }
         public void Add(Book entity){
             books.Add(entity);
@@ -34,7 +34,7 @@ namespace AspNetCoreDemo.Models.Repostries
            book.author = entity.author;
         }
         public void Delete(int Id){
-           books.Remove(Find(id));
+           books.Remove(Find(Id));
         }
     }
 }
