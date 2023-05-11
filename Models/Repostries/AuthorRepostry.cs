@@ -18,10 +18,10 @@ namespace AspNetCoreDemo.Models.Repostries
                 },
             };
         }
-        public IList<author> List(){
+        public IList<Author> List(){
             return authors;
         }
-        public author Find(int Id){
+        public Author Find(int Id){
             return authors.SingleOrDefault(b => b.Id == id);
         }
         public void Add(TEntity entity){
@@ -29,9 +29,7 @@ namespace AspNetCoreDemo.Models.Repostries
         }
         public void Update(int id ,TEntity entity){
            var author =  Find(id) ;
-           author.Title = entity.Title;
-           author.Descreption = entity.Descreption;
-           author.Author = entity.Author;
+           author.FullName = entity.FullName;
         }
         public void Delete(int Id){
            authors.Remove(Find(id));

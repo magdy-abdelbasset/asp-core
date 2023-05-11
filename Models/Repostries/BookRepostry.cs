@@ -31,7 +31,7 @@ namespace AspNetCoreDemo.Models.Repostries
            var book =  Find(id);
            book.Title = entity.Title;
            book.Descreption = entity.Descreption;
-           book.Author = entity.Author;
+           book.author = entity.author;
         }
         public void Delete(int Id){
            books.Remove(Find(id));
