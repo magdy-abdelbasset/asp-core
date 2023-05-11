@@ -7,7 +7,7 @@ namespace AspNetCoreDemo.Models
 {
     public class Author 
     {
-        public Int Id {get;set;}
-        public String FullName {get;set;}
+        public int Id {get;set;}
+        public string FullName {get;set;}
     }
 }
