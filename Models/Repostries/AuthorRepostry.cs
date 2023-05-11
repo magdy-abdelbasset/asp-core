@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AspNetCoreDemo.Models.Repostries
 {
-    public class AuthorRepostry :IauthorstoreRepostry<Author>
+    public class AuthorRepostry :IBookStoreRepostry<Author>
     {
         List<Author> authors;
         public AuthorRepostry(){
