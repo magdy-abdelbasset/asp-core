@@ -28,7 +28,7 @@ namespace AspNetCoreDemo.Models.Repostries
             books.Add(entity);
         }
         public void Update(int id ,TEntity entity){
-           book =  Find(id)
+           var book =  Find(id)
            book.Title = entity.Title;
            book.Descreption = entity.Descreption;
            book.Author = entity.Author;
