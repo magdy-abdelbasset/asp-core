@@ -21,7 +21,7 @@ namespace AspNetCoreDemo.Models.Repostries
         public IList<Author> List(){
             return authors;
         }
-        public Author Find(int Id){
+        public Author Find(int? Id){
             return authors.SingleOrDefault(b => b.Id == Id);
         }
         public void Add(Author entity){
