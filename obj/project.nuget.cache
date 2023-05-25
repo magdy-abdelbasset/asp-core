@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Gje4+DwJz2+FbhTaFpQ/W44mn8NFQmzir2QMwWvBGERQZUXvR50rFLa5/klgr61ZYGXCpjRGvc4mJH7qH76r5g==",
+  "dgSpecHash": "TFQSwImeYV6y2yob544OHrx8NwEKgTnbMLVa543DXHaTH6D3VcvGV5VirqZFko1EZmIM3K8Xgq3dmkmJaxHNKg==",
   "success": true,
-  "projectFilePath": "/work/sites/firstwebapp/AspNetCoreDemo.csproj",
+  "projectFilePath": "/work/sites/asp-core/AspNetCoreDemo.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

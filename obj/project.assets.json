@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/work/sites/firstwebapp/AspNetCoreDemo.csproj",
+      "projectUniqueName": "/work/sites/asp-core/AspNetCoreDemo.csproj",
       "projectName": "AspNetCoreDemo",
-      "projectPath": "/work/sites/firstwebapp/AspNetCoreDemo.csproj",
+      "projectPath": "/work/sites/asp-core/AspNetCoreDemo.csproj",
       "packagesPath": "/home/magdy/.nuget/packages/",
-      "outputPath": "/work/sites/firstwebapp/obj/",
+      "outputPath": "/work/sites/asp-core/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/magdy/.nuget/NuGet/NuGet.Config"

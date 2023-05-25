@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AspNetCoreDemo.Models.Repostries
+namespace AspNetCoreDemo.Models.Repositories
 {
-    public class AuthorRepostry :IBookStoreRepostry<Author>
+    public class AuthorRepository :IBookstoreRepository<Author>
     {
         List<Author> authors;
-        public AuthorRepostry(){
+        public AuthorRepository(){
             authors = new List<Author>(){
                 new Author {
                     Id =1,FullName="sccsdcsdds",
