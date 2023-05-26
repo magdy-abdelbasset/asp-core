@@ -33,9 +33,10 @@ namespace firstwebapp.Controllers
             var authors = this.authorRepository.List();
             return View(authors);
         }
-        public IActionResult Details()
+        public IActionResult Details(int id)
         {
-            return View();
+            var author = this.authorRepository.Find(id);
+            return View(author);
         }
         public IActionResult Create()
         {

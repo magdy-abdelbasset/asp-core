@@ -5,8 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddMvc();
-builder.Services.AddScoped<IBookstoreRepository<Author>, AuthorRepository>();
-builder.Services.AddScoped<IBookstoreRepository<Book>, BookRepository>();
+builder.Services.AddSingleton<IBookstoreRepository<Author>, AuthorRepository>();
+builder.Services.AddSingleton<IBookstoreRepository<Book>, BookRepository>();
 // builder.Services.AddDbContext<BookstoreDbContext>(options =>
 //             {
 //                 options.UseSqlServer(configuration.GetConnectionString("SqlCon"));
