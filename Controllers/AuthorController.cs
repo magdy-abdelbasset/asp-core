@@ -4,9 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using AspNetCoreDemo.Models;
-using AspNetCoreDemo.Models.Repostries;
+using AspNetCoreDemo.Models.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace firstwebapp.Controllers
 {
@@ -22,6 +23,7 @@ namespace firstwebapp.Controllers
         public AuthorController(IBookstoreRepository<Author> authorRepository)
         {
             this.authorRepository = authorRepository;
+            
             // _logger = logger;
         }
         // [HttpGet]   // GET /api/test2

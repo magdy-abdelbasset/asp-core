@@ -21,7 +21,7 @@ namespace AspNetCoreDemo.Models.Repositories
         public IList<Author> List(){
             return authors;
         }
-        public Author Find(int? Id){
+        public Author Find(int Id){
             return authors.SingleOrDefault(b => b.Id == Id);
         }
         public void Add(Author entity){
@@ -33,6 +33,11 @@ namespace AspNetCoreDemo.Models.Repositories
         }
         public void Delete(int Id){
            authors.Remove(Find(Id));
+        }
+
+        public List<Author> Search(string term)
+        {
+            throw new NotImplementedException();
         }
     }
 }

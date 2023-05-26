@@ -1,6 +1,16 @@
+using AspNetCoreDemo.Models.Repositories;
+using AspNetCoreDemo.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddMvc();
+builder.Services.AddScoped<IBookstoreRepository<Author>, AuthorRepository>();
+builder.Services.AddScoped<IBookstoreRepository<Book>, BookRepository>();
+// builder.Services.AddDbContext<BookstoreDbContext>(options =>
+//             {
+//                 options.UseSqlServer(configuration.GetConnectionString("SqlCon"));
+//             });
 builder.Services.AddRazorPages();
 
 var app = builder.Build();

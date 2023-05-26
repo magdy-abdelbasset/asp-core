@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Bookstore.Models.Repositories
+namespace AspNetCoreDemo.Models.Repositories
 {
    public interface IBookstoreRepository<TEntity>
     {
