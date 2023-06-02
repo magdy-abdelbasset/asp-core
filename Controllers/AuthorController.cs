@@ -60,12 +60,14 @@ namespace firstwebapp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int Id)
         {
-            return View();
+            var author = authorRepository.Find(Id);
+            return View(author);
         }
-        public IActionResult Edit(int Id, IFormCollection collection)
+        public IActionResult Edit(int Id, Author author)
         {
             try
             {
+                authorRepository.Update(Id, author);
                 return RedirectToAction(nameof(Index));
             }
             catch (System.Exception)
@@ -76,13 +78,18 @@ namespace firstwebapp.Controllers
         }
         public IActionResult Delete(int Id)
         {
-            return View();
+            var author = authorRepository.Find(Id);
+            return View(author);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Delete(int Id, IFormCollection collection)
 
         {
             try
             {
+                authorRepository.Delete(Id);
                 return RedirectToAction(nameof(Index));
             }
             catch (System.Exception)
