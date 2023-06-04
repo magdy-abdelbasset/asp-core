@@ -1,4 +1,4 @@
-@model AspNetCoreDemo.Models.Book
+@model AspNetCoreDemo.ViewModels.BookAuthorViewModel
 
 @{
     ViewBag.Title = "title";
@@ -34,12 +34,12 @@
                 <img src="~/uploads/@Model.ImageUrl" style="width:124px;" class="img-thumbnail" />
             </div> *@
             <input type="hidden"  asp-for="ImageUrl" class="form-control" />
-            @* <div class="form-group">
+            <div class="form-group">
                 <label asp-for="AuthorId" class="control-label"></label>
                 <select asp-for="AuthorId" class="form-control"
                         asp-items="@(new SelectList(Model.Authors, "Id", "FullName"))"></select>
                 <span asp-validation-for="AuthorId" class="text-danger"></span>
-            </div> *@
+            </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-outline-info" />
             </div>

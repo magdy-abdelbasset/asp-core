@@ -17,7 +17,7 @@ namespace firstwebapp.Controllers
     public class BookController : Controller
     {
         // private IBookStoreRepostry<Book> bookRepository;
-// 
+        // 
         // private readonly IServiceCollection<BookController> _logger;
         // public IBookStoreRepostry<Book> BookRepositry { get; }
         private readonly IBookstoreRepository<Book> bookRepository;
@@ -45,7 +45,7 @@ namespace firstwebapp.Controllers
         }
         public IActionResult Create()
         {
-        var model = new BookAuthorViewModel
+            var model = new BookAuthorViewModel
             {
                 Authors = FillSelectList()
             };
@@ -53,7 +53,7 @@ namespace firstwebapp.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(IFormCollection collection)
+        public IActionResult Create(BookAuthorViewModel model)
         {
             try
             {
@@ -65,13 +65,26 @@ namespace firstwebapp.Controllers
                 return View();
             }
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult Edit(int Id)
         {
             var book = bookRepository.Find(Id);
-            return View(book);
+            var authorId = book.Author == null ? book.Author.Id = 0 : book.Author.Id;
+
+            var model = new BookAuthorViewModel
+            {
+                BookId = book.Id,
+                Title = book.Title,
+                Description = book.Description,
+                AuthorId = authorId,
+                Authors = authorRepository.List().ToList(),
+                ImageUrl = book.ImageUrl
+            };
+            return View(model);
+
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(int Id, Book book)
         {
             try
@@ -112,7 +125,7 @@ namespace firstwebapp.Controllers
         {
             return View("Error!");
         }
-     List<Author> FillSelectList()
+        List<Author> FillSelectList()
         {
             var authors = authorRepository.List().ToList();
             authors.Insert(0, new Author { Id = -1, FullName = "--- Please select an author ---" });
@@ -120,5 +133,5 @@ namespace firstwebapp.Controllers
             return authors;
         }
     }
-    
+
 }
