@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cnj76LosxAI1a56oYELMzbgU+m3tlAk/jsFAe2pIdSM=",
+  "Hash": "a1puwck0YLz100tarfcmJQHb/frVm9BhXHGeJyaAAdU=",
   "Source": "AspNetCoreDemo",
   "BasePath": "_content/AspNetCoreDemo",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/work/sites/asp-core/wwwroot/uploads/SOFTWARE-SOLUTIONS-DEVELOPMENT.jpg",
+      "SourceId": "AspNetCoreDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "/work/sites/asp-core/wwwroot/",
+      "BasePath": "_content/AspNetCoreDemo",
+      "RelativePath": "uploads/SOFTWARE-SOLUTIONS-DEVELOPMENT.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/SOFTWARE-SOLUTIONS-DEVELOPMENT.jpg"
     }
   ]
 }

@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
 using AspNetCoreDemo.ViewModels;
+using System.IO;
 
 namespace firstwebapp.Controllers
 {
@@ -57,12 +59,35 @@ namespace firstwebapp.Controllers
         {
             try
             {
+                string fileName = this.UploadFile(model.File, model.ImageUrl);
+
+                    if (model.AuthorId == -1)
+                    {
+                        ViewBag.Message = "Please select an author from the list!";
+
+                        // return View(GetAllAuthors());
+                    }
+
+                    var author = authorRepository.Find(model.AuthorId);
+                    Book book = new Book
+                    {
+                        Id = model.BookId,
+                        Title = model.Title,
+                        Description = model.Description,
+                        Author = author,
+                        ImageUrl = fileName
+                    };
+
+                    bookRepository.Add(book);
                 return RedirectToAction(nameof(Index));
             }
             catch (System.Exception)
             {
 
-                return View();
+                return View(new BookAuthorViewModel
+            {
+                Authors = FillSelectList()
+            });
             }
         }
         public IActionResult Edit(int Id)
@@ -132,6 +157,32 @@ namespace firstwebapp.Controllers
 
             return authors;
         }
-    }
+    
+    private string UploadFile(IFormFile file, string? imageUrl){
+            if (file != null)
+            {
+                string uploads = Path.Combine(hosting.WebRootPath, "uploads");
 
+                string newPath = Path.Combine(uploads, file.FileName);
+                string oldPath = string.Empty;
+                if(imageUrl != null){
+
+                    oldPath = Path.Combine(uploads, imageUrl);
+                }    
+
+                if (oldPath != newPath)
+                {
+                    if(imageUrl != null){
+
+                    System.IO.File.Delete(oldPath);
+                    }
+                    file.CopyTo(new FileStream(newPath, FileMode.Create));
+                }
+
+                return file.FileName;
+            }
+
+            return imageUrl;
+        }
+    }
 }

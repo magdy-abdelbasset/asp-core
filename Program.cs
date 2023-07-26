@@ -12,6 +12,7 @@ builder.Services.AddSingleton<IBookstoreRepository<Book>, BookRepository>();
 //                 options.UseSqlServer(configuration.GetConnectionString("SqlCon"));
 //             });
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<BookstoreDbContext>();
 
 var app = builder.Build();
 
